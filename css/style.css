@@ -1,0 +1,81 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+iframe, blockquote {
+    margin-bottom: 20px;
+}
+
+/* General Button Styles */
+.social-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Twitch Button */
+.twitch {
+    background-color: #6441a5; /* Twitch purple */
+}
+
+.twitch:hover {
+    background-color: #553586;
+}
+
+/* Twitter Button */
+.twitter {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+.twitter:hover {
+    background-color: #0d8ddb;
+}
+
+/* Instagram Button */
+.instagram {
+    background-color: #E1306C; /* Instagram pink */
+}
+
+.instagram:hover {
+    background-color: #c12d5d;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
