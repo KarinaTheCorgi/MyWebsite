@@ -1,81 +1,475 @@
-﻿body {
-    font-family: Arial, sans-serif;
+﻿@import url('https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+    font-family: "Zain", sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+:root {
+    /* Colors */
+    --white: #fff;
+    --black: #080708;
+    --dark-blue:#1c3144;
+    --red:#d00000;
+    --yellow:#ffba08;
+    --light-blue:#3f88c5;
+    --light-gray:#e6e8e6;
+
+    /* Font Size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font Weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border Radius */
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /* Site max width */
+    --site-max-width: 1300px;
 }
 
-header nav a {
-    color: #fff;
-    margin: 0 10px;
+
+/* General */
+ul {
+    list-style: none;
+}
+
+a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-iframe, blockquote {
-    margin-bottom: 20px;
-}
-
-/* General Button Styles */
-.social-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    text-align: center;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Twitch Button */
-.twitch {
-    background-color: #6441a5; /* Twitch purple */
-}
-
-.twitch:hover {
-    background-color: #553586;
-}
-
-/* Twitter Button */
-.twitter {
-    background-color: #1DA1F2; /* Twitter blue */
-}
-
-.twitter:hover {
-    background-color: #0d8ddb;
-}
-
-/* Instagram Button */
-.instagram {
-    background-color: #E1306C; /* Instagram pink */
-}
-
-.instagram:hover {
-    background-color: #c12d5d;
-}
-
-
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+img {
     width: 100%;
 }
 
+.section-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+
+/* Nav Bar */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: var(--dark-blue);
+}
+
+header .navbar {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navbar .nav-logo .logo-text {
+    color: var(--white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+.navbar .nav-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px;
+    color: var(--white);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--black);
+    background: var(--red);
+}
+
+.navbar :where(#menu-close-button, #menu-open-button) {
+    display: none;
+}
+
+
+/* Home Page */
+.home-page {
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.home-page .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--black);
+    justify-content: space-between;
+}
+
+.home-page .home-details .title {
+    color: var(--red);
+    font-size: var(--font-size-xxl);
+    font-family: "Anaheim", sans-serif;
+}
+
+.home-page .home-details .subtitle {
+    margin-top: 8px;
+    max-width: 70%;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+.home-page .home-details .description {
+    max-width: 70%;
+    margin: 24px 0 40px;
+    font-size: var(--font-size-m);
+}
+
+.home-page .home-details .buttons {
+    display: flex;
+    gap: 23px;
+}
+
+.home-page .home-details .button {
+    padding: 10px 26px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-m);
+    background: var(--red);
+    color: var(--black);
+    font-weight: var(--font-weight-medium);
+    transition: 0.3s ease;
+}
+
+.home-page .home-details .button:hover {
+    border-color: var(--white);
+    background: var(--yellow);
+}
+
+.home-page .home-details .follow-me {
+    background: var(--light-blue);
+}
+
+.home-page .home-image-wrapper {
+    max-width: 500px;
+    margin-right: 30px;
+}
+
+/* Games */
+.game-info .game-title {
+    color: var(--red);
+    font-size: var(--font-size-xxl);
+    font-family: "Anaheim", sans-serif;
+}
+
+.snake-game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+.snake-game .snake-wrapper {
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 5px;
+    background: #293447;
+}
+
+.snake-game .snake-game-details {
+    color: var(--white);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.snake-game .snake-game-board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    background: #212837;
+}
+
+.snake-game .snake-game-board .food {
+    background: var(--red);
+}
+
+.snake-game .snake-game-board .head {
+    background: var(--light-blue);
+}
+
+.snake-game .snake-controls {
+    display: none;
+    justify-content: space-between;
+}
+
+.snake-game .snake-controls i{
+    padding: 25px 0;
+    color: var(--white);
+    text-align: center;
+    cursor: pointer;
+    font-size: var(--font-size-l);
+    width: calc(100% / 4);
+    border-right: 1px solid var(--black);
+}
+
+/* About Page */
+.about-page {
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.about-page .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--black);
+    justify-content: space-between;
+}
+
+.about-page .about-details .title {
+    color: var(--red);
+    font-size: var(--font-size-xxl);
+    font-family: "Anaheim", sans-serif;
+}
+
+.about-page .about-details .subtitle {
+    margin-top: 8px;
+    max-width: 70%;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+.about-page .about-details .description {
+    max-width: 70%;
+    margin: 24px 0 40px;
+    font-size: var(--font-size-m);
+}
+
+
+/* Socials Page */
+.socials-page {
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.socials-page .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.socials-page .social-details .title {
+    color: var(--red);
+    font-size: var(--font-size-xxl);
+    font-family: "Anaheim", sans-serif;
+}
+
+.socials-page .social-details .social-buttons {
+    display: flex;
+    gap: 23px;
+}
+
+.socials-page .social-details .social-button {
+    padding: 10px 26px;
+    border: 2px solid transparent;
+    color: var(--white);
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-weight-medium);
+    transition: 0.3s ease;
+}
+
+.socials-page .social-details .social-button:hover {
+    border-color: var(--white);
+}
+
+.socials-page .social-details .twitch {
+    background: #6441a5;
+}
+
+.socials-page .social-details .twitch:hover {
+    background: #553586;
+}
+
+.socials-page .social-details .twitter {
+    background: #1DA1F2;
+}
+
+.socials-page .social-details .twitter:hover:hover {
+    background: #0d8ddb;
+}
+
+.socials-page .social-details .instagram {
+    background: #E1306C;
+}
+
+.socials-page .social-details .instagram:hover {
+    background: #c12d5d;
+}
+
+
+/* Responsive Changes */
+@media screen and (max-width: 900px) {
+    :root {
+        --font-size-m: 1rem;
+        --font-size-l: 1.3rem;
+        --font-size-xl: 1.5rem;
+        --font-size-xxl: 1.8rem;
+    }
+
+    /* Nav Bar */
+    body.show-mobile-menu header::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.2);
+    }
+
+    .navbar :where(#menu-close-button, #menu-open-button) {
+        display: block;
+        font-size: var(--font-size-l);
+    }
+
+    .navbar #menu-close-button {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+
+    .navbar #menu-open-button {
+        color: var(--white);
+    }
+
+    .navbar .nav-menu {
+        display: block;
+        position: fixed;
+        right: -300px;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        background: var(--white);
+        transition: left 0.2s ease;
+    }
+
+    .navbar .nav-menu .nav-link {
+        color: var(--black);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-l);
+    }
+
+    body.show-mobile-menu .navbar .nav-menu {
+        right: 0px;
+    }
+
+    /* Home Page */
+    .home-page .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .home-page .home-details :is(.subtitle, .description) {
+        max-width: 100%;
+    }
+
+    .home-page .home-details .buttons {
+        justify-content: center;
+    }
+
+    .home-page .home-image-wrapper {
+        max-width: 270px;
+        margin-top: 0;
+    }
+
+    /* Games */
+    .snake-game {
+        gap: 20px 50px;
+        text-align: center;
+        padding: 50px 20px 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .snake-wrapper {
+        width: 90vmin;
+        height: 115vmin;
+    }
+
+    .snake-game .snake-game-details {
+        font-size: var(--font-size-m);
+        padding: 15px 27px;
+    }
+
+    .snake-game .snake-controls {
+        display: flex;
+    }
+
+    .snake-game .snake-controls i{
+        padding: 15px 0;
+        font-size: var(--font-size-m);
+    }
+
+    /* About Page */
+    .about-page .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .about-page .about-details :is(.subtitle, .description) {
+        max-width: 100%;
+    }
+
+    /* Socials Page */
+    .socials-page .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}

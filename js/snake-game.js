@@ -1,0 +1,95 @@
+const playBoard = document.querySelector(".snake-game-board");
+const scoreText = document.querySelector(".snake-score");
+const highScoreText = document.querySelector(".snake-high-score");
+const controls = document.querySelectorAll(".snake-controls i");
+
+let gameOver = false;
+let foodX, foodY;
+let snakeX = 5, snakeY = 10;
+let snakeBody = [];
+let velocityX = 0, velocityY = 0;
+let setIntervalID;
+let score = 0;
+
+let highScore = localStorage.getItem("snake-high-score") || 0; 
+highScoreText.innerText = `High Score: ${highScore}`;
+
+
+const changeFoodPosition = () => {
+    foodX = Math.floor(Math.random() * 30) + 1;
+    foodY = Math.floor(Math.random() * 30) + 1;
+}
+
+const changeDirection = (e) => {
+    if(e.key === "ArrowUp" && velocityY != 1) {
+        velocityX = 0;
+        velocityY = -1;
+    } else if(e.key === "ArrowDown" && velocityY != -1) {
+        velocityX = 0;
+        velocityY = 1;
+    } else if(e.key === "ArrowLeft" && velocityX != 1) {
+        velocityX = -1;
+        velocityY = 0;
+    } else if(e.key === "ArrowRight" && velocityX != -1) {
+        velocityX = 1;
+        velocityY = 0;
+    }
+}
+
+controls.forEach(key => {
+    key.addEventListener("click", () => changeDirection({ key: key.dataset.key}));
+});
+
+const handleGameOver = () => {
+    clearInterval(setIntervalID);
+    alert("Game Over! Press OK to replay");
+    location.reload();
+}
+
+const initGame = () => {
+    if (gameOver) return handleGameOver();
+    let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
+   
+    // snake eating food logic
+    if(snakeX === foodX && snakeY === foodY) {
+        changeFoodPosition();
+        snakeBody.push([foodX, foodY]);
+        score++;
+
+        highScore = score >= highScore ? score : highScore;
+        localStorage.setItem("snake-high-score", highScore);
+        scoreText.innerText = `Score: ${score}`;
+        highScoreText.innerText = `High Score: ${highScore}`;
+    }
+
+    // shifting each part of snake body by 1
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
+    }
+
+    snakeBody[0] = [snakeX, snakeY];
+
+    // changing head position based on direction
+    snakeX += velocityX;
+    snakeY += velocityY;
+
+    // snake touching wall logic
+    if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+        gameOver = true;
+    }
+
+    // adding additional snake body parts & checking for body collision
+    for (let i = 0; i < snakeBody.length; i++) {
+        htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+            gameOver = true;
+        }
+    }
+    
+    playBoard.innerHTML = htmlMarkup;
+}
+
+changeFoodPosition();
+setIntervalID = setInterval(initGame, 125);
+
+document.addEventListener("keydown", changeDirection);
