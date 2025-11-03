@@ -4,9 +4,6 @@ export default function Socials() {
     return (
         <>
             <title>Socials</title>
-
-            <Navbar/>
-
             <main>
                 <section className="socials-page">
                     <div className="section-content">
@@ -27,8 +24,6 @@ export default function Socials() {
                     </div>
                 </section>
             </main>
-
-            <Footer/>
         </>
     )
 }

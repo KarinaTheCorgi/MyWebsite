@@ -20,8 +20,6 @@ export default function Projects() {
     return (
         <>
             <title>Projects</title>
-
-            <Navbar />
             <div className="projects-page">
                 <h1 className="title">Projects</h1>
                     <div className="projects-list">
@@ -41,7 +39,6 @@ export default function Projects() {
                         ))}
                     </div>
                 </div>
-            <Footer />
         </>
     )
 }

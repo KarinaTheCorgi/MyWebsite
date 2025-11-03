@@ -6,6 +6,7 @@ import Games from './pages/games';
 import Socials from './pages/socials';
 import Projects from './pages/projects';
 import NotFound from './pages/notfound';
+import Footer from './components/Footer';
 
 export default function App() {
     return (
@@ -19,6 +20,7 @@ export default function App() {
                 <Route path="/projects" element={<Projects/>}/>
                 <Route path="/*" element={<NotFound/>}/>
             </Routes>
+            <Footer/>
         </BrowserRouter>
     );
 }

@@ -5,9 +5,6 @@ export default function Home() {
     return (
         <>
             <title>About</title>
-            
-            <Navbar/>
-
             <main>
                 <section className="about-page">
                     <div className="section-content">
@@ -34,8 +31,6 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </>
     )
 }

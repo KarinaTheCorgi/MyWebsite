@@ -7,8 +7,6 @@ export default function Home() {
         <>
             <title>Home</title>
 
-            <Navbar/>
-
             <main>
                 <section className="home-page">
                     <div className="section-content">
@@ -27,8 +25,6 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-
-            <Footer />
         </>
     )
 }
