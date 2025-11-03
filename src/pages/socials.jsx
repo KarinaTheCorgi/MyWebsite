@@ -27,6 +27,8 @@ export default function Socials() {
                     </div>
                 </section>
             </main>
+
+            <Footer/>
         </>
     )
 }

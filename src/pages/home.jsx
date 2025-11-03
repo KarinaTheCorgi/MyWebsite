@@ -1,5 +1,6 @@
 ﻿import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
@@ -17,7 +18,7 @@ export default function Home() {
                             <p className="description">Stay for a while to learn about an up-and-coming developer, me.</p>
                             <div className="buttons">
                                 <a href="https://github.com/KarinaTheCorgi" className="button github">See my code!</a>
-                                <a href="/socials" className="button follow-me">Follow Me</a>
+                                <Link to='/socials' className="button follow-me">Socials</Link>
                             </div>
                         </div>
                         <div className="home-image-wrapper">
