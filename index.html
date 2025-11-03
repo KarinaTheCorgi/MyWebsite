@@ -1,66 +1,15 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>krnthec.org</title>
+        <link rel ="icon" type="image/x-icon" href="./corgi_logo.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
+    </head>
 
-<body>
-    <!-- Header / Navbar-->
-    <header>
-        <nav class="navbar section-content">
-            <a href="index.html" class="nav-logo">
-                <h1 class="logo-text">KarinaTheC.org</h1>
-            </a>
-            <ul class="nav-menu">
-                <button id="menu-close-button" class="fas fa-times"></button>
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="games.html" class="nav-link">Games</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="socials.html" class="nav-link">Find Me</a>
-                </li>
-            </ul>
-            <button id="menu-open-button" class="fas fa-bars"></button>
-        </nav>
-        <script src="/js/nav-bar.js" defer></script>
-    </header>
-
-
-    <!-- Home Page -->
-    <main>
-        <section class="home-page">
-            <div class="section-content">
-                <div class="home-details">
-                    <h2 class="title">Welcome</h2>
-                    <h3 class="subtitle">You've come to the right place!</h3>
-                    <p class="description">Stay for a while to learn about an up-and-coming developer, me.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/KarinaTheCorgi" class="button github">See my code!</a>
-                        <a href="socials.html" class="button follow-me">Follow Me</a>
-                    </div>
-                </div>
-                <div class="home-image-wrapper">
-                    <img src="/assets/orange_dino_cartoon.png" alt="orange cartoon dinosaur" class="hero-image">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    
-
-    <footer>
-        <p>©2024 KarinaTheCorgi</p>
-    </footer>
-</body>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>

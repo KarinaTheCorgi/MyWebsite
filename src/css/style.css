@@ -112,7 +112,6 @@ header .navbar {
     display: none;
 }
 
-
 /* Home Page */
 .home-page {
     background: var(--white);
@@ -124,7 +123,7 @@ header .navbar {
     align-items: center;
     min-height: 100vh;
     color: var(--black);
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .home-page .home-details .title {
@@ -187,7 +186,6 @@ header .navbar {
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
-
     margin: 0 auto;
     padding: 0 20px;
     max-width: var(--site-max-width);
@@ -201,6 +199,7 @@ header .navbar {
     flex-direction: column;
     border-radius: 5px;
     background: #293447;
+    position: relative;
 }
 
 .snake-game .snake-game-details {
@@ -212,7 +211,22 @@ header .navbar {
     justify-content: space-between;
 }
 
+.pause-button {
+  background: var(--red);
+  color: var(--black);
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--border-radius-m);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.pause-button:hover {
+  background: var(--yellow);
+}
+
 .snake-game .snake-game-board {
+    position: relative;
     width: 100%;
     height: 100%;
     display: grid;
@@ -220,12 +234,54 @@ header .navbar {
     background: #212837;
 }
 
-.snake-game .snake-game-board .food {
+.snake-game-board .head {
+    background: var(--light-blue);
+}
+
+.snake-game-board .body {
+    background: var(--light-blue);
+}
+
+.snake-game-board .food {
     background: var(--red);
 }
 
-.snake-game .snake-game-board .head {
-    background: var(--light-blue);
+.start-overlay,
+.pause-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(33, 40, 55, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 10;
+    pointer-events: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.start-overlay button,
+.pause-overlay button {
+    background: var(--red);
+    color: var(--black);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-m);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: var(--font-weight-semibold);
+    transition: background 0.2s;
+}
+
+.start-overlay button:hover,
+.pause-overlay button:hover {
+    background: var(--yellow);
 }
 
 .snake-game .snake-controls {
@@ -233,7 +289,7 @@ header .navbar {
     justify-content: space-between;
 }
 
-.snake-game .snake-controls i{
+.snake-game .snake-controls i {
     padding: 25px 0;
     color: var(--white);
     text-align: center;
@@ -241,6 +297,52 @@ header .navbar {
     font-size: var(--font-size-l);
     width: calc(100% / 4);
     border-right: 1px solid var(--black);
+}
+
+/* Projects Page */
+.projects-page {
+  padding-top: 100px;
+  /*padding: 40px 20px;*/
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-page .title {
+  color: var(--red);
+  font-size: var(--font-size-xxl);
+  font-family: "Anaheim", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #212837;
+  border-radius: 8px;
+  padding: 20px;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent, #4caf50);
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
 }
 
 /* About Page */
@@ -336,6 +438,39 @@ header .navbar {
 
 .socials-page .social-details .instagram:hover {
     background: #c12d5d;
+}
+
+/* Footer */
+.site-footer {
+  background: #293447;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 50px;
+}
+
+.footer-socials a,
+.footer-professional a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover,
+.footer-professional a:hover {
+  color: var(--accent, #4caf50);
 }
 
 
