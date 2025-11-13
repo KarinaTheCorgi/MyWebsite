@@ -81,7 +81,6 @@ header .navbar {
     padding: 20px;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .navbar .nav-logo .logo-text {
@@ -175,6 +174,20 @@ header .navbar {
 }
 
 /* Games */
+.games-page {
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.games-page .section-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--black);
+    justify-content: space-evenly;
+    flex-flow: row;
+}
+
 .game-info .game-title {
     color: var(--red);
     font-size: var(--font-size-xxl);
@@ -260,7 +273,6 @@ header .navbar {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    z-index: 10;
     pointer-events: auto;
     text-align: center;
     border-radius: 5px;
@@ -301,18 +313,22 @@ header .navbar {
 
 /* Projects Page */
 .projects-page {
-  padding-top: 100px;
-  /*padding: 40px 20px;*/
-  max-width: 1200px;
-  margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+}
+
+.projects-page .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--black);
+    justify-content: space-between;
 }
 
 .projects-page .title {
   color: var(--red);
   font-size: var(--font-size-xxl);
   font-family: "Anaheim", sans-serif;
-  margin-bottom: 30px;
-  text-align: center;
 }
 
 .projects-list {
@@ -441,9 +457,7 @@ header .navbar {
 }
 
 /* Footer */
-.site-footer {
-  background: #293447;
-  color: white;
+.footer {
   padding: 20px;
   text-align: center;
   position: relative;
@@ -455,8 +469,10 @@ header .navbar {
 .footer-content {
   display: flex;
   flex-direction: column;
+  background: var(--dark-blue);
   align-items: center;
   gap: 15px;
+  color: white;
 }
 
 .footer-links {
@@ -563,12 +579,21 @@ header .navbar {
     }
 
     /* Games */
+    .games-page .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .snake-game {
         gap: 20px 50px;
         text-align: center;
         padding: 50px 20px 20px;
         flex-direction: column;
         justify-content: center;
+        font-size: clamp(1rem, 5vw, 2rem);
     }
 
     .snake-wrapper {
@@ -576,9 +601,9 @@ header .navbar {
         height: 115vmin;
     }
 
-    .snake-game .snake-game-details {
-        font-size: var(--font-size-m);
-        padding: 15px 27px;
+    .start-overlay h2,
+    .pause-overlay h2 {
+        font-size: clamp(1rem, 5vw, 2rem);
     }
 
     .snake-game .snake-controls {

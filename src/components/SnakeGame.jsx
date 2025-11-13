@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 
 export default function SnakeGame() {
   const BOARD_SIZE = 30;
-  localStorage.clear();
 
   const [snake, setSnake] = useState([[5, 10]]);
   const [food, setFood] = useState(generateFood([[5, 10]]));
@@ -129,57 +128,67 @@ export default function SnakeGame() {
   };
 
   return (
-    <div className="snake-game">
+    <>
       <div className="game-info">
         <h2 className="game-title">Snake Game</h2>
       </div>
 
-      <div className="snake-wrapper">
-        <div className="snake-game-details">
-          <span className="snake-score">Score: {score}</span>
-          <span className="snake-high-score">High Score: {highScore}</span>
-          {gameStarted && !gameOver && !isPaused && (
-            <button className="button pause-button" onClick={togglePause}>
-              ⏸ Pause
-            </button>
-          )}
-        </div>
+      <div className="snake-game">
+        <div className="snake-wrapper">
+          <div className="snake-game-details">
+            <span className="snake-score">Score: {score}</span>
+            <span className="snake-high-score">High Score: {highScore}</span>
+            {gameStarted && !gameOver && !isPaused && (
+              <button className="button pause-button" onClick={togglePause}>
+                ⏸ Pause
+              </button>
+            )}
+          </div>
 
-        <div className="snake-game-board">
-          {snake.map(([x, y], idx) => (
-            <div
-              key={idx}
-              className={idx === 0 ? "head" : "body"}
-              style={{ gridArea: `${y} / ${x}` }}
-            />
-          ))}
-          <div className="food" style={{ gridArea: `${food[1]} / ${food[0]}` }} />
+          <div className="snake-game-board">
+            {snake.map(([x, y], idx) => (
+              <div
+                key={idx}
+                className={idx === 0 ? "head" : "body"}
+                style={{ gridArea: `${y} / ${x}` }}
+              />
+            ))}
+            <div className="food" style={{ gridArea: `${food[1]} / ${food[0]}` }} />
 
-          {/* Start overlay */}
-          {!gameStarted && !gameOver && (
-            <div className="start-overlay">
-              <h2>Snake Game</h2>
-              <button onClick={startGame}>▶ Play</button>
-            </div>
-          )}
+            {/* Start overlay */}
+            {!gameStarted && !gameOver && (
+              <div className="start-overlay">
+                <h2>Snake Game</h2>
+                <button onClick={startGame}>▶ Play</button>
+              </div>
+            )}
 
-          {/* Pause overlay */}
-          {isPaused && !gameOver && (
-            <div className="pause-overlay">
-              <h2>Paused</h2>
-              <button onClick={togglePause}>▶ Resume</button>
-            </div>
-          )}
+            {/* Pause overlay */}
+            {isPaused && !gameOver && (
+              <div className="pause-overlay">
+                <h2>Paused</h2>
+                <button onClick={togglePause}>▶ Resume</button>
+              </div>
+            )}
 
-          {/* Game Over overlay */}
-          {gameOver && (
-            <div className="pause-overlay">
-              <h2>Game Over</h2>
-              <button onClick={startGame}>⟳ Restart</button>
-            </div>
-          )}
+            {/* Game Over overlay */}
+            {gameOver && (
+              <div className="pause-overlay">
+                <h2>Game Over</h2>
+                <button onClick={startGame}>⟳ Restart</button>
+              </div>
+            )}
+          </div>
+
+          {/* Controls */}
+          <div className="snake-controls"> 
+            <i className="fa-solid fa-arrow-left-long" onClick={() => gameStarted && !isPaused && direction[0] !== 1 && setDirection([-1, 0]) } ></i> 
+            <i className="fa-solid fa-arrow-up-long" onClick={() => gameStarted && !isPaused && direction[1] !== 1 && setDirection([0, -1]) } ></i> 
+            <i className="fa-solid fa-arrow-right-long" onClick={() => gameStarted && !isPaused && direction[0] !== -1 && setDirection([1, 0]) } ></i> 
+            <i className="fa-solid fa-arrow-down-long" onClick={() => gameStarted && !isPaused && direction[1] !== -1 && setDirection([0, 1]) } ></i> 
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

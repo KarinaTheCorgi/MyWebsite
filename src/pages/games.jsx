@@ -7,8 +7,10 @@ export default function Games() {
         <>
             <title>Games</title>
             <main>
-                <section className="games">
-                    <SnakeGame />
+                <section className="games-page">
+                    <div className="section-content">
+                        <SnakeGame />
+                    </div>
                 </section>
             </main>
         </>

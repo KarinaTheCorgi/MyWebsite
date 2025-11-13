@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer>
         <div className="footer-content">
             <span>© 2025 Karina Solis</span>
 

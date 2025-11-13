@@ -10,11 +10,12 @@ export default function Home() {
                     <div className="section-content">
                         <div className="about-details">
                             <h2 className="title">About Me</h2>
-                            <h3 className="subtitle">Here's a little background for those curious.</h3>
+                            <h3 className="subtitle">Who am I?</h3>
                             <p className="description">Hello! My name is Karina. I'm currently pursuing a bachelor's degree in Software Engineering at 
                                                 Embry-Riddle Aeronautical University. I am set to graduate in May 2026, so I'm curently getting all 
                                                 my projects together, including this one. </p>
                             
+                            <h3 className="subtitle">History</h3>
                             <p className="description">I was initially accepted at ERAU intending to pursue a career in Mechanical Engineering, but decided 
                                                 that my skillsets more closely aligned with Software Engineering. In 8th grade, I was first introduced 
                                                 to the idea of computer science, by taking an elective that taught python. There is no better feeling 

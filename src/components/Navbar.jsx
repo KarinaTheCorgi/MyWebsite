@@ -14,6 +14,7 @@ export default function Navbar() {
             <nav className='navbar section-content'>
                 <Link to="/" className='nav-logo' onClick={() => setMenuOpen(false)}>
                     <h1 className='logo-text'>krnthec.org</h1>
+                    <link rel ="icon" type="image/x-icon" href="/public/corgi_logo.ico" />
                 </Link>
 
                 <ul className='nav-menu'>
