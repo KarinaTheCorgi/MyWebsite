@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
         <div className="footer-content">
-            <span>© 2025 Karina Solis</span>
+            <span>© 2025 KarinaTheCorgi</span>
 
             <div className="footer-links">
                 {/* Social links */}

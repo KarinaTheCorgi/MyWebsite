@@ -177,15 +177,16 @@ header .navbar {
 .games-page {
     background: var(--white);
     min-height: 100vh;
+    padding-top: 90px;
 }
 
 .games-page .section-content{
     display: flex;
     align-items: center;
-    min-height: 100vh;
     color: var(--black);
     justify-content: space-evenly;
     flex-flow: row;
+    min-height: 100vh;
 }
 
 .game-info .game-title {
@@ -198,7 +199,6 @@ header .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
     margin: 0 auto;
     padding: 0 20px;
     max-width: var(--site-max-width);
@@ -315,10 +315,12 @@ header .navbar {
 .projects-page {
     background: var(--white);
     min-height: 100vh;
+    padding-top: 90px;
 }
 
 .projects-page .section-content {
     display: flex;
+    flex-direction: row;
     align-items: center;
     min-height: 100vh;
     color: var(--black);
@@ -365,12 +367,12 @@ header .navbar {
 .about-page {
     background: var(--white);
     min-height: 100vh;
+    padding-top: 90px;
 }
 
 .about-page .section-content {
     display: flex;
     align-items: center;
-    min-height: 100vh;
     color: var(--black);
     justify-content: space-between;
 }
@@ -399,13 +401,25 @@ header .navbar {
 .socials-page {
     background: var(--white);
     min-height: 100vh;
+    padding-top: 90px;
 }
 
 .socials-page .section-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.socials-page .social-details {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 200px;
 }
 
 .socials-page .social-details .title {
@@ -414,9 +428,18 @@ header .navbar {
     font-family: "Anaheim", sans-serif;
 }
 
+.socials-page .social-details .kofi-widget {
+    border: "none";
+    width: 100%;
+    padding:4px;
+    background:#f9f9f9;
+}
+
 .socials-page .social-details .social-buttons {
     display: flex;
-    gap: 23px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
 }
 
 .socials-page .social-details .social-button {
@@ -426,6 +449,9 @@ header .navbar {
     border-radius: var(--border-radius-m);
     font-weight: var(--font-weight-medium);
     transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .socials-page .social-details .social-button:hover {
@@ -435,26 +461,22 @@ header .navbar {
 .socials-page .social-details .twitch {
     background: #6441a5;
 }
-
 .socials-page .social-details .twitch:hover {
     background: #553586;
 }
-
 .socials-page .social-details .twitter {
     background: #1DA1F2;
 }
-
-.socials-page .social-details .twitter:hover:hover {
+.socials-page .social-details .twitter:hover {
     background: #0d8ddb;
 }
-
 .socials-page .social-details .instagram {
     background: #E1306C;
 }
-
 .socials-page .social-details .instagram:hover {
     background: #c12d5d;
 }
+
 
 /* Footer */
 .footer {
@@ -590,7 +612,7 @@ header .navbar {
     .snake-game {
         gap: 20px 50px;
         text-align: center;
-        padding: 50px 20px 20px;
+        padding: 0px 20px 20px;
         flex-direction: column;
         justify-content: center;
         font-size: clamp(1rem, 5vw, 2rem);
@@ -613,6 +635,15 @@ header .navbar {
     .snake-game .snake-controls i{
         padding: 15px 0;
         font-size: var(--font-size-m);
+    }
+
+    /* Projects Page */
+    .projects-page .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column;
+        justify-content: center;
     }
 
     /* About Page */
