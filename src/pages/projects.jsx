@@ -13,7 +13,7 @@ export default function Projects() {
         title: "NotABot",
         description: "[Spring 2025] A fake discord chatbot",
         skills: ["Python - Backend", "SQL", "Multithreading", "Testing"],
-        link: ""
+        link: "https://github.com/KarinaTheCorgi/NotABot"
     },
     {
         title: "P1 Alerts",
