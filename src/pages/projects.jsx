@@ -46,7 +46,14 @@ export default function Projects() {
             <title>Projects</title>
                 <section className="projects-page">
                     <div className="section-content">
-                        <h1 className="title">Projects</h1>
+                        <div>
+                            <h1 className="title">Projects</h1>
+                            <a href="../public/KarinaSolis_Resume.pdf" download="KarinaSResume">
+                                <button class="download-button">
+                                    <i class="fa fa-download"></i> Resume
+                                </button>
+                            </a>
+                        </div>
                         <div className="projects-list">
                             {projects.map((project, idx) => (
                                 <div className="project-card" key={idx}>
